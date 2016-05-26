@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>行业信息</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='style.css') }}">
+    <script type="{{
+  url_for('static', filename='prefixfree.js') }}"></script>
+</head>
+
+<body>
+
+    <body>
+       <div class="topheader">
+        <br>
+        <h2>&nbsp;软件项目管理在线学习</h2>
+        <h3>&nbsp;&nbsp;Software Project Management Learning Online</h3>
+    </div>
+        <div class="wrap">
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html"><span class="home"></span>首页</a>
+                        <ul>
+                            <li><a href="index.html#intro">课程介绍</a></li>
+                            <li><a href="index.html#content">课程内容</a></li>
+                            <li><a href="index.html#praxis">课程实践</a></li>
+                            <li><a href="index.html#tteam">教学团队</a></li>
+                            <li><a href="index.html#login">用户登录</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="info.html"><span class="info"></span>行业信息</a>
+                        <ul>
+                            <li><a href="info.html#situation">就业形势</a></li>
+                            <li><a href="info.html#prospect">行业前景</a></li>
+                            <li><a href="info.html#news">行业新闻</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="download.html"><span class="download"></span>下载区</a>
+                        <ul>
+                            <li><a href="download.html#doc">教学视频</a></li>
+                            <li><a href="download.html#vedio">课程资料</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="grades.html"><span class="grades"></span>成绩查询</a></li>
+                    <li><a href="bbs.html"><span class="bbs"></span>留言板</a></li>
+                    <li><a href="test.html"><span class="test"></span>网上测试</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </nav>
+        </div>
+        <div class="infomation">
+            <div id="situation">
+                <h3>就业形势</h3>
+                <p>软件开发与项目管理专业培养具有扎实专业基础、较强工程实现能力、较高综合素质的软件技能型人才。根据企事业单位软件开发岗位对软件人才具体要求，与社会需求接轨，让学生掌握主流的编程技术方法，掌握软件工程方法、工具和技术，能够从事软件分析、设计、测试和维护等工作。同时加强团队协作精神、技术创新能力和市场开拓能力的培养，培养高层次、实用型软件工程技术人才。
+                    <br>专业以市场需求为导向，面向软件工程领域，培养具备扎实的计算机软件专业基础，掌握先进的软件开发技术和软件项目管理方法，具有较强的软件开发实践能力和良好的软件工程素养，能面向中小型软件开发企业直接从事软件开发或软件项目管理工作的高级软件工程技术人才。
+                    <br>
+                </p>
+            </div>
+            <div id="prospect">
+                <h3>就业前景</h3>
+                <p>﻿随着世界产业转移的加速，欧美、日本等发达国家将大量的软件开发业务转移到中国、印度等国家。据统计，目前全球软件外包市场规模超过1000亿元，我国软件服务外包产业总收入在未来三年将达260多亿美元，随之而来的是对软件服务外包人才的巨大需求，未来5年，国内服务外包产业人才需求量至少要达到100万。目前软件外包从业人员的薪资水平普遍高于一般软件开发人员，就业前景广阔。
+                    <br>
+                </p>
+            </div>
+            <div id="news">
+                <h3>行业新闻</h3>
+                <p>
+                    <a href="http://www.pcpop.com/doc/2/2750/2750626.shtml">Linux成为计算机史上最大的软件开发项目</a>
+                    <br>
+                    <a href="http://www.infoq.com/cn/articles/five-big-mistakes-open-source-software-company-easy-to-make">开源软件公司易犯的5大错误，又该如何避免？</a>
+                    <br>
+                    <a href="http://auto.sohu.com/20160521/n450810354.shtml">苹果10亿投资滴滴 出行成新的资本热地</a>
+                    <br>
+                    <a href="http://www.ccidnet.com/2016/0509/10130072.shtml">软件运维费用测算，即将有据可依</a>
+                    <br>
+                    <a href="http://www.xaecong.com/html/news/201512/3100263.html">中小型软件公司软件开发项目管理常见的三点弊病</a>
+                    <br>
+                    <a href="http://www.xaecong.com/html/news/201512/189573910.html">软件开发项目管理不要因小型项目就放松开发标准</a></p>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footerleft">
+                        <P>
+                            <a href="index.html">
+                                <img src="{{ url_for('static', filename='image/logo-footer.png') }}">
+                            </a>
+                        </P>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+</html>

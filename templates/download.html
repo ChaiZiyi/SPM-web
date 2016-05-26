@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>下载区</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='style.css') }}">
+    <script type="{{
+  url_for('static', filename='prefixfree.js') }}"></script>
+</head>
+
+<body>
+
+    <body>
+        <div class="topheader">
+        <br>
+        <h2>&nbsp;软件项目管理在线学习</h2>
+        <h3>&nbsp;&nbsp;Software Project Management Learning Online</h3>
+    </div>
+        <div class="wrap">
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html"><span class="home"></span>首页</a>
+                        <ul>
+                            <li><a href="index.html#intro">课程介绍</a></li>
+                            <li><a href="index.html#content">课程内容</a></li>
+                            <li><a href="index.html#praxis">课程实践</a></li>
+                            <li><a href="index.html#tteam">教学团队</a></li>
+                            <li><a href="index.html#login">用户登录</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="info.html"><span class="info"></span>行业信息</a>
+                        <ul>
+                            <li><a href="info.html#situation">就业形势</a></li>
+                            <li><a href="info.html#prospect">行业前景</a></li>
+                            <li><a href="info.html#news">行业新闻</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="download.html"><span class="download"></span>下载区</a>
+                        <ul>
+                            <li><a href="download.html#doc">教学视频</a></li>
+                            <li><a href="download.html#vedio">课程资料</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="grades.html"><span class="grades"></span>成绩查询</a></li>
+                    <li><a href="bbs.html"><span class="bbs"></span>留言板</a></li>
+                    <li><a href="test.html"><span class="test"></span>网上测试</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </nav>
+        </div>
+        <div class="download">
+            <div id="vedio">
+                <h3>教学视频</h3>
+                <p>暂无</p>
+            </div>
+            <div id="doc">
+                <h3>课程资料</h3>
+                <h1>PPT</h1>
+                <p>
+                    <a href="{{ url_for('static', filename='download/1.ppt') }}">第一章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/2.ppt') }}">第二章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/3.ppt') }}">第三章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/4.ppt') }}">第四章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/5.ppt') }}">第五章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/6.ppt') }}">第六章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/7.ppt') }}">第七章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/8.ppt') }}">第八章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/9.ppt') }}">第九章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/10.ppt') }}">第十章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/11.ppt') }}">第十一章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/12.ppt') }}">第十二章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/13.ppt') }}">第十三章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/14.ppt') }}">第十四章</a>&nbsp;
+                    <a href="{{ url_for('static', filename='download/15.ppt') }}">第十五章</a>
+                    <br>
+                    <a href="{{ url_for('static', filename='download/all.zip') }}">全部下载</a>
+                </p>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footerleft">
+                        <P>
+                            <a href="index.html">
+                                <img src="{{ url_for('static', filename='image/logo-footer.png') }}">
+                            </a>
+                        </P>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static',  filename = 'style.css')}}" type="text/css">
+    <div class="topheader">
+        <br>
+        <h2>&nbsp;软件项目管理在线学习</h2>
+        <h3>&nbsp;&nbsp;Software Project Management Learning Online</h3>
+    </div>{% block head %} {% endblock %}
+</head>
+
+<body>
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+        <ul class=flashes>
+            {% for category, message in messages %}
+            <li class={{category}}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %} {% endwith %}
+    </div>
+    {% block body%} {% endblock %}
+    </div>
+</body>
+
+</html>

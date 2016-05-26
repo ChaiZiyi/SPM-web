@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='style.css') }}">
+    <script type="{{
+  url_for('static', filename='prefixfree.js') }}"></script>
+    <script src="{{
+  url_for('static', filename='jquery-1.8.3.min.js') }}"></script>
+    <!--Luara js文件-->
+    <script src="{{
+  url_for('static', filename='jquery.luara.0.0.1.min.js') }}"></script>
+</head>
+
+<body>
+    <div class="topheader">
+        <br>
+        <h2>&nbsp;软件项目管理在线学习</h2>
+        <h3>&nbsp;&nbsp;Software Project Management Learning Online</h3>
+    </div>
+    <div class="wrap">
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html"><span class="home"></span>首页</a>
+                    <ul>
+                        <li><a href="index.html#intro">课程介绍</a></li>
+                        <li><a href="index.html#content">课程内容</a></li>
+                        <li><a href="index.html#praxis">课程实践</a></li>
+                        <li><a href="index.html#tteam">教学团队</a></li>
+                        <li><a href="index.html#login">用户登录</a></li>
+                    </ul>
+                </li>
+                <li><a href="info.html"><span class="info"></span>行业信息</a>
+                    <ul>
+                        <li><a href="info.html#situation">就业形势</a></li>
+                        <li><a href="info.html#prospect">行业前景</a></li>
+                        <li><a href="info.html#news">行业新闻</a></li>
+                    </ul>
+                </li>
+                <li><a href="download.html"><span class="download"></span>下载区</a>
+                    <ul>
+                        <li><a href="download.html#doc">教学视频</a></li>
+                        <li><a href="download.html#vedio">课程资料</a></li>
+                    </ul>
+                </li>
+                <li><a href="grades.html"><span class="grades"></span>成绩查询</a></li>
+                <li><a href="bbs.html"><span class="bbs"></span>留言板</a></li>
+                <li><a href="test.html"><span class="test"></span>网上测试</a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </nav>
+    </div>
+    <div class="picture">
+        <ul>
+            <li><img src="{{ url_for('static', filename='image/index1.jpg') }}" alt="1"></li>
+            <li><img src="{{ url_for('static', filename='image/index2.jpg') }}" alt="2"></li>
+            <li><img src="{{ url_for('static', filename='image/index3.jpg') }}" alt="3"></li>
+        </ul>
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <script>
+    $(function() {
+        <!--调用Luara-->
+        $(".picture").luara({
+            width: 940,
+            height: 460,
+            interval: 4500,
+            selected: "seleted",
+            deriction: "left"
+        });
+
+    });
+    </script>
+    <div class="lesson">
+        <div id="intro">
+            <h3>课程介绍</h3>
+            <hr width="100%" color="#8cab6e" />
+            <h4>课程简介</h4>
+            <p>软件项目管理是一门技术和管理交叉型、指导软件开发项目的组织与管理的学科。旨在培养软件项目管理人才。通过本课程的学习，你可以掌握有关软件项目管理的基本理论，熟悉软件项目管理的方法、流程和工具；培养在软件开发组织中管理软件开发项目的基本能力，并将软件项目管理的理论应用于软件项目的实践，提高分析、解决问题的能力。</p>
+            <h4>预备知识</h4>
+            <P>程序设计基础、算法与数据结构</P>
+            <h4>参考书目</h4>
+            <p>[1] 韩万江. 软件项目管理案例教程. 机械工业出版社, 2015,(06) .
+                <br> [2] 邓杰超. 软件项目管理探析[J]. 华南金融电脑, 2007,(01) .
+                <br> [3] 窦燕. 影响软件项目管理关键因素的探讨[J]. 燕山大学学报, 2004,(04) .
+                <br> [4] 李凌. 软件项目管理中的进度控制问题研究[J]. 中国科技信息, 2005,(17) .
+                <br> [5] 陈丽杰. 浅析软件项目管理中的需求管理[J]. 科技资讯, 2007,(14) . </p>
+            <h4>教学大纲</h4>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>篇</td>
+                        <td>章节</td>
+                        <td>专题标题</td>
+                        <td>周次</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"></td>
+                        <td rowspan="2">Ch1 软件项目管理概述</td>
+                        <td>课程介绍</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>软件项目管理概述</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">第一篇：软件项目初始</td>
+                        <td rowspan="3">Ch2 软件项目确立</td>
+                        <td>项目立项</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>项目招投标</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>实践一：项目招投标</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Ch3 项目生存期模型</td>
+                        <td>生存期模型</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>实践二：生存期模型确定</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="25">第二篇：软件项目计划</td>
+                        <td rowspan="3">CH4 软件项目需求管理</td>
+                        <td>软件需求管理过程</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>软件需求建模</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>实践三：项目需求管理</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Ch5 软件项目任务分解</td>
+                        <td>任务分解WBS</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>实践四：项目任务分解</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">Ch6 软件项目成本计划</td>
+                        <td>成本估算</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>成本预算</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>实践五：项目成本估算</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">Ch7 软件项目进度计划</td>
+                        <td>历时估算</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>实践六：网络图和历史估算</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>进度计划编排 项目进度模型</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>实践七：项目进度编排</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Ch8 软件项目质量计划</td>
+                        <td>软件项目管理及计划</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>实践八：项目质量计划</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Ch9 软件配置管理计划</td>
+                        <td>软件项目配置管理及计划</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>实践九：配置管理计划</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">Ch10软件项目人员与沟通计划</td>
+                        <td>项目人员计划</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>干系人管理计划</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>沟通计划</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>实践十：人员组织沟通计划</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Ch11软件项目风险计划</td>
+                        <td>风险管理的过程及计划</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>实践十一：项目风险计划</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>Ch12软件项目合同计划</td>
+                        <td>合同计划</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Ch13软件项目集成计划</td>
+                        <td>软件项目集成计划</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>实验十二：项目集成计划</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="8">第三篇：项目执行控制</td>
+                        <td>Ch14软件项目集成执行控制</td>
+                        <td>软件项目集成执行控制</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">Ch15核心计划执行控制</td>
+                        <td>范围、实践、成本管理</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>实践十三：进度成本控制</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>质量管理</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>实践十四：项目质量控制</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">Ch16辅助计划执行控制</td>
+                        <td>人员、干系人、沟通管理</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>风险、合同管理</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>实践十五：项目评审管理</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">第四篇：项目结束</td>
+                        <td rowspan="2">Ch17项目结束过程</td>
+                        <td>项目结束过程</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>实践十六：验收答辩</td>
+                        <td>16</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class=right>
+            <div id="login">
+                <h3>用户登录</h3>
+                <hr width="100%" color="#8cab6e" />
+                <div class="loginbox">
+                    {% if useremail %}
+                    <form class="logout-form" method="POST" action="{{url_for('logout')}}">
+                        <h4>当前登录用户：{{ useremail }}</h4>
+                        <input class="logout-btn" type="submit" value="注销">
+                        <br>
+                    </form>
+                    {%else%}
+                    <h4>用户未登录！</h4>
+                    <input type=button onclick="window.location.href='login'" value="登录">&nbsp;&nbsp;
+                    <input type=button onclick="window.location.href='signup'" value="注册"> {% endif %}</div>
+            </div>
+            <br>
+            <div id="content">
+                <h3>课程内容</h3>
+                <hr width="100%" color="#8cab6e" />
+                <p>
+                    · 授课教案：各章节上课所用ppt
+                    <br> · 教学视频：在线观看教师讲解
+                    <br> · 练习题目：加深对各知识点理解并进行巩固
+                    <br> · 模拟测试：测试自身知识水平掌握情况，查漏补缺
+                    <br> · 案例分析：根据章节实践要求，提供案例以供参考
+                    <br>
+                </p>
+            </div>
+            <div id="praxis">
+                <h3>课程实践</h3>
+                <hr width="100%" color="#8cab6e" />
+                <p>
+                    · 实践指导书
+                    <br> · 学生实践过程展示
+                    <br> · 学生实践文档展示
+                    <br> · 师生交互过程
+                    <br> · 学生最后答辩过程
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footerleft">
+                    <P>
+                        <a href="index.html">
+                            <img src="{{ url_for('static', filename='image/logo-footer.png') }}">
+                        </a>
+                    </P>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

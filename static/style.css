@@ -1,0 +1,382 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video,picture,lesson,tteam,container,teacher,footer,topheader
+infomation，download,grades,bbs,test{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight: 500;
+    margin: 15px 0px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    color: #8cab6e;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 550;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+h4 {
+    color: rgb(34, 34, 34);
+    font-size: 18px;
+    font-weight: 520;
+    margin: 15px 0px;
+}
+
+p,ul,table,td,th {
+    color: #575757;
+    font-size: 15px;
+    margin: 15px 0px;
+    line-height: 1.5em;
+    font-weight: 500;
+}
+
+table,
+td,
+th {
+    border: 1px solid #7d7d7d;
+    text-align: center;
+}
+
+td {
+    width: 20%;
+}
+
+
+/* HTML5 在旧的浏览器中显示角色复位 */
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,ul {
+    list-style: none;
+}
+
+blockquote,q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.topheader {
+    background-color: #8cab6e;
+    width: 940px;
+    height: 140px;
+    text-align: left;
+    margin: 1em auto;
+}
+
+.topheader h3 {
+    color: white;
+}
+
+.topheader h2 {
+    color: white;
+}
+
+
+/* 默认样式*/
+
+body {
+    background: url('image/big4.gif');
+    font-family: "Microsoft YaHei", "微软雅黑";
+}
+
+.clearfix {
+    clear: both;
+}
+
+.wrap {
+    width: 940px;
+    margin: 2em auto;
+    margin-top: 0;
+}
+
+nav {
+    background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#ccc));
+    background-image: linear-gradient(#fff, #ccc);
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.4);
+    padding: 0 10px;
+    position: relative;
+    z-index: 1111;
+}
+
+.menu li {
+    float: left;
+    position: relative;
+    width: 16%;
+}
+
+.menu li a {
+    color: #444;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 6px 12px;
+    margin: 8px 8px;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background: -webkit-gradient(linear, center top, center bottom, from(#ededed), to(#fff));
+    background-image: linear-gradient(#ededed, #fff);
+    border-radius: 12px;
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    color: #222;
+}
+
+
+/* 下拉菜单样式 */
+
+.menu ul {
+    position: absolute;
+    left: -9999px;
+    list-style: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.menu ul li {
+    float: none;
+}
+
+.menu ul a {
+    white-space: nowrap;
+}
+
+
+/* 显示下拉菜单的时候悬停并移动回原位置*/
+
+.menu li:hover ul {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0 0 6px 6px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.4);
+    left: 5px;
+    opacity: 1;
+}
+
+
+/* 持续性悬停状态 */
+
+.menu li:hover a {
+    background: -webkit-gradient(linear, center top, center bottom, from(#ccc), to(#ededed));
+    background-image: linear-gradient(#ccc, #ededed);
+    border-radius: 12px;
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    color: #222;
+}
+
+.menu li:hover ul a {
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.menu li:hover ul li a:hover {
+    background: -webkit-gradient(linear, center top, center bottom, from(#eee), to(#fff));
+    background-image: linear-gradient(#ededed, #fff);
+    border-radius: 12px;
+    box-shadow: inset 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.picture {
+    width: 940px;
+    height: 460px;
+    margin: 1em auto;
+}
+
+.picture ol {
+    position: relative;
+    width: 80px;
+    height: 20px;
+    top: -30px;
+    left: 60px;
+}
+
+.picture ol li {
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background: #fff;
+}
+
+.picture ol li.seleted {
+    background: #1AA4CA;
+}
+
+
+/* 图片轮播 */
+
+.luara-left {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+}
+
+.luara-left ul {
+    position: relative;
+    padding: inherit;
+    margin: 0;
+}
+
+.luara-left ul li {
+    float: left;
+    padding: inherit;
+    margin: inherit;
+    list-style: none;
+}
+
+.luara-left ul li img {
+    width: inherit;
+    height: inherit;
+}
+
+.lesson {
+    width: 940px;
+    height: 1900px;
+    margin: 2em auto;
+}
+
+#tteam {
+    width: 940px;
+    height: 230px;
+    margin: 2em auto;
+    float: none;
+}
+
+#intro {
+    width: 585px;
+    float: left;
+    margin-right: 15px;
+}
+
+.right {
+    width: 340px;
+    float: left;
+}
+
+.teacher {
+    width: 16%;
+    float: left;
+    text-align: center;
+    padding: 0px 2px;
+    margin: 15px 0px;
+}
+
+.teacher.img {
+    width: 100%;
+    vertical-align: center;
+}
+
+.container {
+    width: 940px;
+    margin: 0.5em auto;
+}
+
+footer {
+    background: #524d49;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    height: 100px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.footerleft {
+    width: 33%;
+    float: left;
+}
+
+.infomation {
+    width: 940px;
+    height: 500px;
+    margin: 2em auto;
+}
+
+.situation {
+    width: 940px;
+    height: 1900px;
+    margin: 2em auto;
+}
+
+.prospect {
+    width: 940px;
+    height: 300px;
+    margin: 2em auto;
+}
+
+.news {
+    width: 940px;
+    height: 300px;
+    margin: 2em auto;
+}
+
+.download {
+    width: 940px;
+    height: 300px;
+    margin: 2em auto;
+}
+
+.grades {
+    width: 940px;
+    height: 800px;
+    margin: 2em auto;
+}
+
+.bbs {
+    width: 940px;
+    height: 1200px;
+    margin: 2em auto;
+}
+
+.test {
+    width: 940px;
+    height: 1000px;
+    margin: 2em auto;
+}
