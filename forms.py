@@ -18,3 +18,4 @@ class SignupForm(Form):
     confirm = PasswordField('Repeat Password')
     email = StringField('Email', validators=[
                         DataRequired(), Length(min=5, max=35), Email()])
+    select = 0

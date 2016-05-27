@@ -310,6 +310,28 @@
                     <input type=button onclick="window.location.href='signup'" value="注册"> {% endif %}</div>
             </div>
             <br>
+            <div id="select">{% if useremail %}
+                <h3>选课结果</h3>
+                <hr width="100%" color="#8cab6e" /> {% if useremail=="admin@admin.com" %} {%if unconfirm%}
+                <h4>当前已选课但未确认的账号有：</h4>
+                <ul>
+                    {% for s in unconfirm%} {% if s.email!="admin@admin.com" %}
+                    <li>{{ s.email }}</li>
+                    {%endif%} {% endfor %}
+                </ul>
+                <input type=button onclick="window.location.href='confirm'" value="一键确认">
+                <br>
+                <br> {%else%}
+                <h4>当前无已选课但未确认的账号！</h4> {%endif%}{% else %} {% if selected.select==0%}
+                <h4>未选课</h4>
+                <input type=button onclick="window.location.href='select'" value="选课"> {%elif selected.select==1%}
+                <h4>已选课等待教师确认</h4>
+                <input type=button onclick="window.location.href='cancel'" value="退选"> {%else%}
+                <h4>选课结果教师已确认</h4>
+                <input type=button onclick="window.location.href='cancel'" value="退选"> {% endif %}
+                <br>
+                <br>{% endif %}{% endif %}
+            </div>
             <div id="content">
                 <h3>课程内容</h3>
                 <hr width="100%" color="#8cab6e" />

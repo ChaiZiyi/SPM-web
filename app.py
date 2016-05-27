@@ -8,6 +8,8 @@ from werkzeug import generate_password_hash, check_password_hash
 from forms import SignupForm, LoginForm
 from flask.ext import excel
 from datetime import datetime, timedelta
+import pyexcel.ext.xls
+import pyexcel.ext.xlsx
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///data.db"
@@ -22,11 +24,13 @@ class User(db.Model):
     name = db.Column(db.String(120))
     password = db.Column(db.String(120))
     email = db.Column(db.String(240), unique=True)
+    select = db.Column(db.Integer)  # 选课状态，0未选，1已选未确认，2已选已确认
 
-    def __init__(self, name, email, password):
+    def __init__(self, name, email, password, select):
         self.name = name
         self.email = email
         self.set_password(password)
+        self.select = select
 
     def set_password(self, password):
         self.password = generate_password_hash(password)
@@ -49,7 +53,11 @@ def check_user_status():
 @app.route('/index.html', methods=('GET', 'POST'))
 def home():
     if session['user_email']:
-        return render_template('index.html', useremail=session['user_email'])
+        unconfirm = User.query.filter(User.select == 1).all()
+        selected = User.query.filter(
+            User.email == session['user_email']).first()
+        return render_template('index.html', useremail=session['user_email'],
+                               unconfirm=unconfirm, selected=selected)
     return render_template('index.html')
 
 
@@ -79,12 +87,12 @@ def signup():
     if form.validate_on_submit():
         user_email = User.query.filter_by(email=form.email.data).first()
         if user_email is None:
-            user = User(form.name.data, form.email.data, form.password.data)
+            user = User(form.name.data, form.email.data,
+                        form.password.data, form.select)
             db.session.add(user)
             db.session.commit()
             session['user_email'] = form.email.data
             session['user_name'] = form.name.data
-            flash(u'感谢你的注册，你已登录！')
             return redirect(url_for('home'))
         else:
             flash(u'该邮箱已被注册，请重新选择一个！', 'error')
@@ -97,6 +105,33 @@ def logout():
     session.pop('user_email', None)
     session.pop('user_name', None)
     return redirect(request.referrer or url_for('home'))
+
+
+@app.route('/confirm', methods=('GET', 'POST'))
+def confirm():
+    unconfirm = User.query.filter(User.select == 1).all()
+    for u in unconfirm:
+        u.select = 2
+    db.session.commit()
+    return redirect(url_for('home'))
+
+
+@app.route('/select', methods=('GET', 'POST'))
+def select():
+    selected = User.query.filter(
+        User.email == session['user_email']).first()
+    selected.select = 1
+    db.session.commit()
+    return redirect(url_for('home'))
+
+
+@app.route('/cancel', methods=('GET', 'POST'))
+def cancel():
+    selected = User.query.filter(
+        User.email == session['user_email']).first()
+    selected.select = 0
+    db.session.commit()
+    return redirect(url_for('home'))
 
 
 @app.route('/info.html')
@@ -133,7 +168,7 @@ class Post(db.Model):
         return '<Post %r>' % self.name
 
 
-@app.route("/import", methods=['GET', 'POST'])
+@app.route('/import', methods=['GET', 'POST'])
 def doimport():
     if request.method == 'POST':
 
@@ -149,14 +184,14 @@ def doimport():
     return render_template('upload.html')
 
 
-@app.route("/delete", methods=['GET', 'POST'])
+@app.route('/delete', methods=['GET', 'POST'])
 def dodelete():
     Post.query.delete()
     db.session.commit()
     return redirect(url_for('grades'))
 
 
-@app.route("/export", methods=['GET'])
+@app.route('/export', methods=['GET'])
 def doexport():
     return excel.make_response_from_tables(db.session, [Post], "xls")
 
@@ -217,4 +252,4 @@ def test():
 
 if __name__ == '__main__':
     db.create_all()
-    app.run()
+    app.run(debug=True)
