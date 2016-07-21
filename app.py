@@ -218,7 +218,7 @@ class Thread(db.Model):
         self.email = session['user_email']
         self.title = title
         self.body = body
-        self.date = (datetime.utcnow() + timedelta(hours=8))
+        self.date = (datetime.utcnow() + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S')
 
     def __repr__(self):
         return '<Thread Title %r>' % self.title
