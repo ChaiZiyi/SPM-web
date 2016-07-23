@@ -212,7 +212,7 @@ class Thread(db.Model):
     email = db.Column(db.String(240))
     title = db.Column(db.String(100))
     body = db.Column(db.Text)
-    date = db.Column(db.DateTime)
+    date = db.Column(db.String(100))
 
     def __init__(self, title, body):
         self.email = session['user_email']
